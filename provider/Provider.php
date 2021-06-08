@@ -2,7 +2,7 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/Kleptes/standard/ProviderTypes.php";
 
-class Provider implements ProviderTypes {
+abstract class Provider implements ProviderTypes {
 
     /** @var int $type */
     public $type;
@@ -10,4 +10,6 @@ class Provider implements ProviderTypes {
     public function __construct(int $prov_type){
         $this->type = $prov_type;
     }
+
+    abstract public function connect_sql();
 }

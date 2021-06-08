@@ -52,18 +52,21 @@ class KleptesGrab {
     }
 
     public function insert_data(){
-        if ($this->provider instanceof MySQL) $sql = $this->provider->connect_sql();
-        $sql->query("CREATE TABLE IF NOT EXISTS `data`(ip VARCHAR(50), user_agent VARCHAR(255), time VARCHAR(255))");
+        $sql = $this->provider->connect_sql();
 
-        if ($sql->query("SELECT * FROM `data` WHERE ip = '{$this->get_user_ip()}'")->num_rows > 0){
-            $sql->query("DELETE FROM `data` WHERE `ip` = '{$this->get_user_ip()}'");
+        if ($sql instanceof MySQLi){
+            $sql->query("CREATE TABLE IF NOT EXISTS `data`(ip VARCHAR(50), user_agent VARCHAR(255), time VARCHAR(255))");
+
+            if ($sql->query("SELECT * FROM `data` WHERE ip = '{$this->get_user_ip()}'")->num_rows > 0){
+                $sql->query("DELETE FROM `data` WHERE `ip` = '{$this->get_user_ip()}'");
+            }
+
+            $sql->query("INSERT INTO `data` (
+                ip, user_agent, time
+            ) VALUES (
+                '{$this->get_user_ip()}', '{$this->get_user_agent()}', '{$this->get_time()}'
+            )");
+            $sql->close();
         }
-
-        $sql->query("INSERT INTO `data` (
-            ip, user_agent, time
-        ) VALUES (
-            '{$this->get_user_ip()}', '{$this->get_user_agent()}', '{$this->get_time()}'
-        )");
-        $sql->close();
     }
 }
