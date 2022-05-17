@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/Kleptes/src/standard/ProviderTypes.php";
+require_once "./../standard/ProviderTypes.php";
 
 abstract class Provider implements ProviderTypes {
 
