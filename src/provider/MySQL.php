@@ -12,7 +12,7 @@ class MySQL extends Provider {
      * @return stdClass
      */
     protected function serialize_sql_data() : stdClass {
-        return json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/Kleptes/src/settings/sql-ids.json"));
+        return json_decode(file_get_contents("./../settings/sql-ids.json"));
     }
 
     /**
