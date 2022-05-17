@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/Kleptes/src/provider/Provider.php";
+require_once "./../provider/Provider.php";
 
 class MySQL extends Provider {
 
