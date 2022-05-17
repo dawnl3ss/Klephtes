@@ -1,7 +1,7 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/Kleptes/src/provider/Provider.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/Kleptes/src/provider/MySQL.php";
+require_once "./../provider/Provider.php";
+require_once "./../provider/MySQL.php";
 
 class KleptesGrab {
 
