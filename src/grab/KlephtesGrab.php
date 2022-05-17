@@ -3,7 +3,7 @@
 require_once "./../provider/Provider.php";
 require_once "./../provider/MySQL.php";
 
-class KleptesGrab {
+class KlephtesGrab {
 
     /** @var array $u_data */
     private $u_data;
