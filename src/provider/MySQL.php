@@ -1,6 +1,6 @@
 <?php
 
-require_once "./../provider/Provider.php";
+require_once "./Provider.php";
 
 class MySQL extends Provider {
 
@@ -12,7 +12,7 @@ class MySQL extends Provider {
      * @return stdClass
      */
     protected function serialize_sql_data() : stdClass {
-        return json_decode(file_get_contents("./../settings/sql-ids.json"));
+        return json_decode(file_get_contents("./../../settings/sql-ids.json"));
     }
 
     /**
