@@ -1,7 +1,6 @@
 <?php
 
-require_once "./../provider/Provider.php";
-require_once "./../provider/MySQL.php";
+require_once __DIR__ . "/../provider/MySQL.php";
 
 class Grab {
 

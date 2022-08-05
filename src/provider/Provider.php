@@ -1,13 +1,13 @@
 <?php
 
-require_once "./../standard/ProviderTypes.php";
+require_once __DIR__ . "/../standard/ProviderTypes.php";
 
 abstract class Provider implements ProviderTypes {
 
-    /** @var int $type */
+    /** @var string $type */
     public $type;
 
-    public function __construct(int $prov_type){
+    public function __construct(string $prov_type){
         $this->type = $prov_type;
     }
 
