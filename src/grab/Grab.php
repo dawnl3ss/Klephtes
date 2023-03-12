@@ -38,6 +38,7 @@ class Grab {
     /**
      * @return string
      */
+    // /!\ Critic : need to protect this from modified user-agent (for sqli)
     public function get_user_agent() : string {
         return $this->u_data['HTTP_USER_AGENT'];
     }
